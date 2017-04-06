@@ -2,7 +2,7 @@ const express = require('express');
 var app = express();
 var fs = require('fs');
 var hbs = require('hbs');
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname+'/views/partials');
 hbs.registerHelper('getCurrentYear',()=>{return new Date().getFullYear()} );
@@ -44,4 +44,6 @@ app.get('/bad',(req,res)=>{
     });
 });
 
-app.listen(3000);
+app.listen(port,()=>{
+    console.log(`server is working at port no : ${port}`)
+});
