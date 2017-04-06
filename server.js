@@ -2,8 +2,8 @@ const express = require('express');
 var app = express();
 var fs = require('fs');
 var hbs = require('hbs');
-const port = process.env.PORT || 3000;
-
+//const port = process.env.PORT || 3000;
+console.log(process.env);
 hbs.registerPartials(__dirname+'/views/partials');
 hbs.registerHelper('getCurrentYear',()=>{return new Date().getFullYear()} );
 hbs.registerHelper('scremIt',(text)=>{
@@ -44,6 +44,4 @@ app.get('/bad',(req,res)=>{
     });
 });
 
-app.listen(port,()=>{
-    console.log(`Server is running at ${port} port`);
-});
+app.listen(port);
