@@ -21,10 +21,18 @@ app.use((req,res,next)=>{
     });
     next();
 });
+/*
 app.use((req,res,next)=>{
     res.render('maintenance.hbs');
 })
+*/
 
+app.get('/project',(req,res)=>{
+   res.render('project.hbs',{
+       pageTitle:'this Project',
+       message:'This is a project page'
+   });
+});
 app.get('/',(req,res)=>{
    res.render('welcome.hbs',{
        pageTitle:'Home Page',
@@ -35,7 +43,6 @@ app.get('/about',(req,res)=>{
 
     res.render('about.hbs',{
         pageTitle:'About Page'.toLowerCase(),
-        year:new Date().getFullYear()
     });
 });
 app.get('/bad',(req,res)=>{
