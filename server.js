@@ -21,9 +21,9 @@ app.use((req,res,next)=>{
     });
     next();
 });
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
     res.render('maintenance.hbs');
-})
+})*/
 
 app.get('/',(req,res)=>{
    res.render('welcome.hbs',{
