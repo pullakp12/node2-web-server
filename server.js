@@ -45,5 +45,5 @@ app.get('/bad',(req,res)=>{
 });
 
 app.listen(port,()=>{
-    console.log(`server is working at port no : ${port}`)
+    console.log(`server is working at port no : ${port}`);
 });
